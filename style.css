@@ -1,0 +1,175 @@
+/* =========================================
+   Global Styles & Animations
+   ========================================= */
+html {
+    scroll-behavior: smooth; /* Makes scrolling fluid */
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif; /* Using your elegant font */
+    margin: 0;
+    padding: 0;
+    
+    /* Your beautiful background */
+    background-image: linear-gradient(rgba(244, 244, 244, 0.10), rgba(244, 244, 244, 0.85)), url('boreal.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    color: #1A1A14;
+
+}
+
+/* The instruction for the animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   Navigation Bar
+   ========================================= */
+nav {
+    background-color: rgba(44, 62, 80, 0.95); /* Slightly transparent */
+    backdrop-filter: blur(5px); /* Blurs the background behind the nav */
+    color: white;
+    padding: 1.2rem;
+    text-align: center;
+    position: sticky; /* Keeps it at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Soft shadow */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease; /* Fluid hover transition */
+}
+
+nav a:hover {
+    color: #D9CFA8; /* Changes to a nice mossy gold from your CV */
+    transform: translateY(-3px); /* Gently lifts the text up */
+}
+
+/* =========================================
+   Main Content Layout (The "Frame")
+   ========================================= */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    
+    /* NEW: Glassmorphism Effect */
+    background: rgba(253, 251, 245, 0.75); /* Semi-transparent off-white */
+    backdrop-filter: blur(12px); /* Creates the frosted glass blur */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    
+    border-radius: 20px; /* Softer, more fluid corners */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle highlight edge */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Deep, soft shadow */
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Entire container lifts slightly on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   Profile Section Styling
+   ========================================= */
+.profile-section {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 300px; /* INCREASED: Bigger picture */
+    height: 300px; /* INCREASED: Bigger picture */
+    border-radius: 50%; /* Keeps it a perfect circle */
+    object-fit: cover;
+    margin-bottom: 30px; /* Added more space below the picture */
+    
+}
+
+/* NEW: Styling specifically for the bio text to make it larger */
+.profile-section p {
+    font-size: 1.25rem; /* Makes the bio text larger and easier to read */
+    line-height: 1.8; /* Adds breathing room between the lines of text */
+    color: #444;
+}
+
+/* =========================================
+   Resume Page Specific Styles
+   ========================================= */
+.resume-section {
+    margin-bottom: 40px;
+}
+
+.resume-section h2 {
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.resume-item {
+    margin-bottom: 25px;
+}
+
+/* This flexbox trick puts the title on the left and the date on the right! */
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resume-header .title {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.resume-header .date {
+    font-weight: bold;
+    color: #666;
+}
+
+.institution {
+    margin: 5px 0 10px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.resume-section ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+.resume-section li {
+    margin-bottom: 8px;
+}
+/* =========================================
+   Phones & small screens
+   ========================================= */
+img { max-width: 100%; height: auto; }
+
+@media (max-width: 700px) {
+    nav { padding: 0.8rem 0.5rem; }
+    nav a { margin: 4px 10px; font-size: 1rem; }
+    .container { width: auto; margin: 20px 12px; padding: 22px; }
+    .container:hover { transform: none; }
+    .profile-pic { width: 200px; height: 200px; }
+    .profile-section p { font-size: 1.05rem; }
+    .resume-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+    body { background-attachment: scroll; }
+}
+
+/* Keep the contact icons on one line */
+.container a[style*="inline-flex"] { vertical-align: middle; }
